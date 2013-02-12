@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, startPage!</string>
+    <string name="hello">Everything become possible</string>
     <string name="app_name">Mind-games</string>
+    <string name="startBtn">Start a game</string>
 
 </resources>
