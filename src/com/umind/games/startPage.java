@@ -10,4 +10,6 @@ public class startPage extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
     }
+    public Seria s = new Seria(0,100,3);
+    
 }
