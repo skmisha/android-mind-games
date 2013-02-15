@@ -10,10 +10,16 @@
         android:text="@string/hello" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/startBtn"
         android:layout_width="match_parent"
         android:layout_height="37dp"
-        android:text="@string/startBtn" />
+        android:text="@string/startBtnTxt" />
+
+    <Button
+        android:id="@+id/scoreBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/scoreBtnTxt" />
 
     <TextView
         android:id="@+id/textView1"

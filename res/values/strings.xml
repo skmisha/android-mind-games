@@ -3,7 +3,8 @@
 
     <string name="hello">Everything becomes possible</string>
     <string name="app_name">Mind-games</string>
-    <string name="startBtn">Start a game</string>
-    <string name="dataLbl">data zzz</string>
+    <string name="startBtnTxt">Start a game</string>
+    <string name="scoreBtnTxt">Score board</string>
+    <string name="dataLbl">My Natasha!</string>
 
 </resources>
