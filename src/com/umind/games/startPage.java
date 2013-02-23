@@ -12,4 +12,5 @@ public class startPage extends Activity {
     }
     public Seria s = new Seria(0,100,3);
     
+    
 }

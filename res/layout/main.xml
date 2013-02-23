@@ -12,13 +12,13 @@
     <Button
         android:id="@+id/startBtn"
         android:layout_width="match_parent"
-        android:layout_height="37dp"
+        android:layout_height="50dp"
         android:text="@string/startBtnTxt" />
 
     <Button
         android:id="@+id/scoreBtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="@string/scoreBtnTxt" />
 
     <TextView
