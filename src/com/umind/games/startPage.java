@@ -7,6 +7,9 @@ import android.view.MenuItem;
 import android.app.Activity;
 import android.widget.Toast;
 
+// http://developer.android.com/training/basics/firstapp/starting-activity.html
+// Open new activity for DisplayNewGame with a button for stop/back to menu  
+
 public class startPage extends Activity {
     /** Called when the activity is first created. */
     @Override
