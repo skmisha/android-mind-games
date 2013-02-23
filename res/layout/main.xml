@@ -12,18 +12,18 @@
     <Button
         android:id="@+id/startBtn"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="50dip"
         android:text="@string/startBtnTxt" />
 
     <Button
         android:id="@+id/scoreBtn"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="50dip"
         android:text="@string/scoreBtnTxt" />
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="371dp"
+        android:id="@+id/mainView"
+        android:layout_width="371dip"
         android:layout_height="0dip"
         android:layout_weight="0.09"
         android:text="@string/dataLbl"
