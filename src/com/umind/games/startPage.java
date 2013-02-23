@@ -1,20 +1,10 @@
 package com.umind.games;
 
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.app.Activity;
-import android.content.Context;
-import android.content.res.TypedArray;
-import android.media.MediaPlayer;
-import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.BaseAdapter;
-import android.widget.Gallery;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 public class startPage extends Activity {
@@ -24,6 +14,22 @@ public class startPage extends Activity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
         return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+        case R.id.sound:
+           
+               	Toast.makeText(startPage.this, "chosen", Toast.LENGTH_SHORT).show();
+           
+            return true;
+        case R.id.about:
+        	Toast.makeText(startPage.this, "This is all that there is for now", Toast.LENGTH_LONG).show();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
     
 
