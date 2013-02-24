@@ -8,15 +8,35 @@ public class Seria {
 	private int currentElement;
 	private int index=0;
 	
+	public final static String SERIA_COMPLETED="-";
 	public Seria(int f, int l, int s){
 		setFirstElement(f);
 		setLastElement(l);
 		setStep(s);
+		setCurrentElement(firstElement);
 	}
 	
-	public int getNextElement(){
-		index++;
-		return (currentElement+step);
+	public int getIndex(){
+		return index;
+	}
+	public boolean isNextIsLast(){
+		if ( (currentElement + step) >= lastElement) {
+			return true;
+		}
+		else 
+			return false;
+	}
+	public String getNextElement(){
+		int next = getCurrentElement()+getStep();
+		if (isNextIsLast()){
+			return SERIA_COMPLETED;
+		}
+		else {
+			index++;
+			setCurrentElement(next);
+			return ""+next;
+		}
+		
 	}
 	public void setStep(int s){
 		step=s;
