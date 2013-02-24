@@ -5,8 +5,15 @@
     <string name="app_name">Mind-gamez</string>
     <string name="startBtnTxt">Start a game</string>
     <string name="scoreBtnTxt">Score board</string>
+    <string name="startOverBtnTxt">Start Over!</string>
     <string name="dataLbl">Series would appear here.</string>
     <string name="about">About</string>
     <string name="sound">Sound</string>
+    
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_show_game">ShowGame</string>
+    
+    <string name="hint_message">One seria</string>
 
 </resources>
