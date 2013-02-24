@@ -14,6 +14,9 @@ import android.widget.Toast;
 // http://developer.android.com/training/basics/firstapp/starting-activity.html
 // Open new activity for DisplayNewGame with a button for stop/back to menu  
 
+// write a class for setting a game: choose number of series and their (f,l,step)
+//when game begins show description for each seria at the top and also show the first vector
+
 public class startPage extends Activity {
     /** Called when the activity is first created. */
 	public final static String EXTRA_MESSAGE = "com.umind.games.EXTRA_MESSAGE";
