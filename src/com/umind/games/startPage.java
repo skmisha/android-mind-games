@@ -36,7 +36,9 @@ public class startPage extends Activity {
         switch (item.getItemId()) {
         case R.id.sound:
            
-               	Toast.makeText(startPage.this, "chosen", Toast.LENGTH_SHORT).show();
+               	Toast.makeText(startPage.this, "Chosen", Toast.LENGTH_SHORT).show();
+               	ShowGame sg = new ShowGame();
+               	sg.startOver(null);
            
             return true;
         case R.id.about:

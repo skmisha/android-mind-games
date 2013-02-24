@@ -36,5 +36,4 @@
         android:text="@string/dataLbl"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     
-
 </LinearLayout>
