@@ -30,7 +30,7 @@ public class Seria {
 	public String getNextElement(){
 		int next = getCurrentElement()+getStep();
 		if (isNextIsLast()){
-			return SERIA_COMPLETED;
+			return SERIA_COMPLETED+getCurrentElement()+SERIA_COMPLETED;
 		}
 		else {
 			index++;
