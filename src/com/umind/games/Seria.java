@@ -26,6 +26,7 @@ public class Seria {
 		else 
 			return false;
 	}
+	
 	public String getNextElement(){
 		int next = getCurrentElement()+getStep();
 		if (isNextIsLast()){
