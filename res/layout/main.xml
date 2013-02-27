@@ -9,18 +9,33 @@
         android:layout_height="wrap_content"
         android:text="@string/hello" />
 
-    <Button
-        android:id="@+id/startBtn"
-        android:layout_width="match_parent"
-        android:layout_height="50dip"
-        android:text="@string/startBtnTxt"
-        android:onClick="startGame" />
 
-    <Button
-        android:id="@+id/scoreBtn"
-        android:layout_width="match_parent"
-        android:layout_height="50dip"
-        android:text="@string/scoreBtnTxt" />
+	    <Button
+	        android:id="@+id/startBtn"
+	        android:layout_width="match_parent"
+	        android:layout_height="50dip"
+	        android:text="@string/startBtnTxt"
+	        android:onClick="startGame" />
+	    <Button
+	        android:id="@+id/chooseGameBtn"
+	        android:layout_width="match_parent"
+	        android:layout_height="50dip"
+	        android:text="@string/chooseGameBtnTxt"
+	        android:onClick="chooseGame" />
+	    
+	    <Button
+	        android:id="@+id/MemoryGameBtn"
+	        android:layout_width="match_parent"
+	        android:layout_height="50dip"
+	        android:text="@string/memoryGameBtnTxt"
+	        android:onClick="memoryGame" />
+	    
+	    <Button
+	        android:id="@+id/scoreBtn"
+	        android:layout_width="match_parent"
+	        android:layout_height="50dip"
+	        android:text="@string/scoreBtnTxt" />
+
 
     <TextView
         android:id="@+id/edit_message"

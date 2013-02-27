@@ -4,19 +4,32 @@
     <string name="hello">Everything becomes possible</string>
     <string name="app_name">Mind-gamez</string>
     
-    <string name="startBtnTxt">Start a game</string>
+    <string name="startBtnTxt">Series Game</string>
     <string name="scoreBtnTxt">Score board</string>
     <string name="startOverBtnTxt">Start Over</string>
     <string name="showNextBtnTxt">Show Next</string>
+    <string name="chooseGameBtnTxt">Math Game</string>
+    <string name="memoryGameBtnTxt">Memory Game</string>
     
-    <string name="dataLbl">Series would appear here.</string>
+    <string name="dataLbl"></string>
     <string name="about">About</string>
     <string name="sound">Sound</string>
-    
     <string name="series_vector">(...)</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_show_game">ShowGame</string>
-    
     <string name="hint_message"></string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_choose_game">ChooseGame</string>
 
+    
+    
+    <string name="app_title">title</string>
+    <string name="detail_log_file"></string>
+    <string name="detail_log_id"></string>
+    <string name="detail_message"></string>
+    <string name="detail_priority"></string>
+    <string name="detail_priority_name"></string>
+    <string name="detail_timestamp"></string>
+    
+    <style name="TitleText">titletext</style>
 </resources>

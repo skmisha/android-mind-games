@@ -19,11 +19,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.umind.games.ShowGame"
+            android:name="com.umind.games.SeriesGame"
             android:label="@string/title_activity_show_game" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.umind.games.startPage" />
+        </activity>
+        <activity
+            android:name="com.umind.games.MathGame"
+            android:label="@string/title_activity_choose_game" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.umind.games.ShowGame" />
         </activity>
     </application>
 

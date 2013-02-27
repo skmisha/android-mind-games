@@ -19,7 +19,16 @@ import android.widget.Toast;
 
 public class startPage extends Activity {
     /** Called when the activity is first created. */
-	public final static String EXTRA_MESSAGE = "com.umind.games.EXTRA_MESSAGE";
+	public final static String EXTRA_MESSAGE_START_A_GAME = "com.umind.games.EXTRA_MESSAGE_START_A_GAME";
+	public final static String EXTRA_MESSAGE_CHOOSE_GAME = "com.umind.games.EXTRA_MESSAGE_CHOOSE_GAME";
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+    	super.onCreate(savedInstanceState);    
+    	setContentView(R.layout.main);
+    	//setContentView(R.layout.layout2);
+    }
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -28,11 +37,23 @@ public class startPage extends Activity {
     }
     
     public void startGame(View view){
-    	Intent intent = new Intent(this, ShowGame.class);
+    	Intent intent = new Intent(this, SeriesGame.class);
     	TextView textView = (TextView) findViewById(R.id.edit_message);
-    	intent.putExtra(EXTRA_MESSAGE,textView.getText().toString());
+    	intent.putExtra(EXTRA_MESSAGE_START_A_GAME,textView.getText().toString());
     	startActivity(intent);
+    	//will have to change the button to point to game chooser activity
+    	
     }
+    
+    public void chooseGame(View view){
+    	Intent intent = new Intent(this, MathGame.class);
+    	TextView textView = (TextView) findViewById(R.id.edit_message);
+    	intent.putExtra(EXTRA_MESSAGE_CHOOSE_GAME,textView.getText().toString());
+    	startActivity(intent);
+    	//will have to change the button to point to game chooser activity
+    	
+    }
+    
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -40,7 +61,7 @@ public class startPage extends Activity {
         switch (item.getItemId()) {
         case R.id.sound:         
              Toast.makeText(startPage.this, "Chosen", Toast.LENGTH_SHORT).show();
-             ShowGame sg = new ShowGame();
+             SeriesGame sg = new SeriesGame();
              sg.startOver(null);
             return true;
         case R.id.about:
@@ -51,10 +72,6 @@ public class startPage extends Activity {
         }
     }
     
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-    	super.onCreate(savedInstanceState);    
-    	setContentView(R.layout.main);
-    }
+
     
 }
