@@ -4,11 +4,11 @@
     <string name="hello">Everything becomes possible</string>
     <string name="app_name">Mind-gamez</string>
     
-    <string name="startBtnTxt">Series Game</string>
+    <string name="seriesGameBtnTxt">Series Game</string>
     <string name="scoreBtnTxt">Score board</string>
     <string name="startOverBtnTxt">Start Over</string>
     <string name="showNextBtnTxt">Show Next</string>
-    <string name="chooseGameBtnTxt">Math Game</string>
+    <string name="mathGameBtnTxt">Math Game</string>
     <string name="memoryGameBtnTxt">Memory Game</string>
     
     <string name="dataLbl"></string>
@@ -19,7 +19,7 @@
     <string name="title_activity_show_game">ShowGame</string>
     <string name="hint_message"></string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_choose_game">ChooseGame</string>
+    <string name="title_activity_math_game">MathGame</string>
 
     
     

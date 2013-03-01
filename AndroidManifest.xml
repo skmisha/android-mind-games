@@ -27,7 +27,7 @@
         </activity>
         <activity
             android:name="com.umind.games.MathGame"
-            android:label="@string/title_activity_choose_game" >
+            android:label="@string/title_activity_math_game" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.umind.games.ShowGame" />

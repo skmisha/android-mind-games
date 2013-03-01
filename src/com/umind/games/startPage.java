@@ -20,7 +20,7 @@ import android.widget.Toast;
 public class startPage extends Activity {
     /** Called when the activity is first created. */
 	public final static String EXTRA_MESSAGE_START_A_GAME = "com.umind.games.EXTRA_MESSAGE_START_A_GAME";
-	public final static String EXTRA_MESSAGE_CHOOSE_GAME = "com.umind.games.EXTRA_MESSAGE_CHOOSE_GAME";
+	public final static String EXTRA_MESSAGE_MATH_GAME = "com.umind.games.EXTRA_MESSAGE_CHOOSE_GAME";
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class startPage extends Activity {
         return true;
     }
     
-    public void startGame(View view){
+    public void seriesGame(View view){
     	Intent intent = new Intent(this, SeriesGame.class);
     	TextView textView = (TextView) findViewById(R.id.edit_message);
     	intent.putExtra(EXTRA_MESSAGE_START_A_GAME,textView.getText().toString());
@@ -45,12 +45,12 @@ public class startPage extends Activity {
     	
     }
     
-    public void chooseGame(View view){
+    public void mathGame(View view){
     	Intent intent = new Intent(this, MathGame.class);
     	TextView textView = (TextView) findViewById(R.id.edit_message);
-    	intent.putExtra(EXTRA_MESSAGE_CHOOSE_GAME,textView.getText().toString());
+    	intent.putExtra(EXTRA_MESSAGE_MATH_GAME,textView.getText().toString());
     	startActivity(intent);
-    	//will have to change the button to point to game chooser activity
+    	
     	
     }
     

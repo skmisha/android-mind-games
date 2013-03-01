@@ -11,20 +11,20 @@
 
 
 	    <Button
-	        android:id="@+id/startBtn"
+	        android:id="@+id/seriesGameBtn"
 	        android:layout_width="match_parent"
 	        android:layout_height="50dip"
-	        android:text="@string/startBtnTxt"
-	        android:onClick="startGame" />
+	        android:text="@string/seriesGameBtnTxt"
+	        android:onClick="seriesGame" />
 	    <Button
-	        android:id="@+id/chooseGameBtn"
+	        android:id="@+id/mathGameBtn"
 	        android:layout_width="match_parent"
 	        android:layout_height="50dip"
-	        android:text="@string/chooseGameBtnTxt"
+	        android:text="@string/mathGameBtnTxt"
 	        android:onClick="chooseGame" />
 	    
 	    <Button
-	        android:id="@+id/MemoryGameBtn"
+	        android:id="@+id/memoryGameBtn"
 	        android:layout_width="match_parent"
 	        android:layout_height="50dip"
 	        android:text="@string/memoryGameBtnTxt"
