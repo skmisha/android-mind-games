@@ -33,7 +33,15 @@
         android:gravity="center_horizontal"
         android:text="@string/series_vector"
         android:visibility="gone" />
-
+    
+    <Button
+        android:id="@+id/showNextBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:onClick="showNext"
+        android:text="@string/showNextBtnTxt"
+        android:visibility="gone" />
+      
     <TextView
         android:id="@+id/descriptionGameView"
         android:layout_width="match_parent"
@@ -42,12 +50,6 @@
         android:text="@string/descriptionGameViewTxt"
         android:visibility="gone" />
      
-   <Button
-        android:id="@+id/showNextBtn"
-        android:layout_width="match_parent"
-        android:layout_height="50dip"
-        android:onClick="showNext"
-        android:text="@string/showNextBtnTxt"
-        android:visibility="gone" />
+
    
 </LinearLayout>
