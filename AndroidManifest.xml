@@ -32,6 +32,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.umind.games.ShowGame" />
         </activity>
+        <activity
+            android:name="com.umind.games.MemoryGame"
+            android:label="@string/title_activity_memory_game" >
+        </activity>
     </application>
 
 </manifest>

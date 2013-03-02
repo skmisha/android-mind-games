@@ -4,45 +4,30 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     tools:context=".ShowGame" >
-
     
-     <Spinner
-        android:id="@+id/chooseSeriesNumberSpnr"
-        android:layout_width="match_parent"
-        android:layout_height="20dip" />
     
-     <Button
-        android:id="@+id/GoSeriesGameBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="50dip"
-        android:onClick="goSeriesGame"
-        android:text="@string/GoSeriesGameBtnTxt" />
-     
+<!-- 
     <Button
         android:id="@+id/startOverBtn"
         android:layout_width="match_parent"
         android:layout_height="50dip"
         android:onClick="startOver"
-        android:text="@string/startOverBtnTxt"
-        android:visibility="gone" />
+        android:text="@string/startOverBtnTxt" />
 
     <TextView
         android:id="@+id/mainGameView"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:gravity="center_horizontal"
-        android:text="@string/series_vector"
-        android:visibility="gone" />
+        android:text="@string/series_vector" />
 
     <Button
         android:id="@+id/showNextBtn"
         android:layout_width="match_parent"
         android:layout_height="50dip"
         android:onClick="showNext"
-        android:text="@string/showNextBtnTxt"
-        android:visibility="gone" />
+        android:text="@string/showNextBtnTxt" />
 
-
-     
+ -->
 
 </LinearLayout>

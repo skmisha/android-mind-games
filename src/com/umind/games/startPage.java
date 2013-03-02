@@ -20,7 +20,8 @@ import android.widget.Toast;
 public class startPage extends Activity {
     /** Called when the activity is first created. */
 	public final static String EXTRA_MESSAGE_START_A_GAME = "com.umind.games.EXTRA_MESSAGE_START_A_GAME";
-	public final static String EXTRA_MESSAGE_MATH_GAME = "com.umind.games.EXTRA_MESSAGE_CHOOSE_GAME";
+	public final static String EXTRA_MESSAGE_MATH_GAME    = "com.umind.games.EXTRA_MESSAGE_MATH_GAME";
+	public final static String EXTRA_MESSAGE_MEMORY_GAME  = "com.umind.games.EXTRA_MESSAGE_MEMORY_GAME";
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,8 +42,7 @@ public class startPage extends Activity {
     	TextView textView = (TextView) findViewById(R.id.edit_message);
     	intent.putExtra(EXTRA_MESSAGE_START_A_GAME,textView.getText().toString());
     	startActivity(intent);
-    	//will have to change the button to point to game chooser activity
-    	
+    	//will have to change the button to point to game chooser activity    	
     }
     
     public void mathGame(View view){
@@ -50,10 +50,14 @@ public class startPage extends Activity {
     	TextView textView = (TextView) findViewById(R.id.edit_message);
     	intent.putExtra(EXTRA_MESSAGE_MATH_GAME,textView.getText().toString());
     	startActivity(intent);
-    	
-    	
     }
     
+    public void memoryGame (View view){
+    	Intent intent = new Intent(this, MemoryGame.class);
+    	TextView textView = (TextView) findViewById(R.id.edit_message);
+    	intent.putExtra(EXTRA_MESSAGE_MEMORY_GAME,textView.getText().toString());
+    	startActivity(intent);
+    }
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
