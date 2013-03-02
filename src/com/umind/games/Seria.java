@@ -20,7 +20,8 @@ public class Seria {
 		return index;
 	}
 	public boolean isNextIsLast(){
-		if ( (currentElement + step) >= lastElement) {
+		if ((  ((currentElement + step) >= lastElement)  && (step > 0) ) || 
+				((currentElement + step) <= lastElement)  && (step < 0) ){
 			return true;
 		}
 		else 

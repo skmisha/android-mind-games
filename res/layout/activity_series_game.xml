@@ -42,7 +42,13 @@
         android:text="@string/showNextBtnTxt"
         android:visibility="gone" />
 
-
+    <TextView
+        android:id="@+id/descriptionGameView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:gravity="center_horizontal"
+        android:text="@string/descriptionGameViewTxt"
+        android:visibility="gone" />
      
 
 </LinearLayout>

@@ -1,7 +1,10 @@
 package com.umind.games;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
+
 import android.os.Build;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
@@ -23,8 +26,10 @@ public class SeriesGame extends Activity {
 	public final static String START_OVER = "com.umind.games.START_OVER";
 	public Seria s = new Seria(0,100,4);
 	public TextView tvShowSeries;
+	public TextView tvShowSeriesGameDescription;
 	public Button btnShowNext;
 	public Button btnGoSeriesGame;
+	private List<Seria> mainGameSeriaList = new ArrayList<Seria>();
 	private Spinner spinner;
 	
 	
@@ -54,10 +59,46 @@ public class SeriesGame extends Activity {
     	List<Integer> list = new ArrayList<Integer>();
     	list.add(1);	list.add(2);   	list.add(3);   	list.add(4);
     	list.add(5);	list.add(6);   	list.add(7);   	list.add(8);
-    	ArrayAdapter<Integer> dataAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, list);
+    	ArrayAdapter<Integer> dataAdapter = new ArrayAdapter<Integer>(this, 
+    			android.R.layout.simple_spinner_item, list);
     		dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     		spinner.setAdapter(dataAdapter);
     }
+    
+    public void generateSeriesForGame(int numberOfSeries){   	
+    	int step = 0;
+    	int start = 0;
+    	int end = 100;
+    	Integer max = 9;
+    	Integer min = -9;
+    	List<Integer> stepList = new ArrayList<Integer>();
+    	for (int i = min; i <= max; i++){
+    		stepList.add(i);
+    	}
+    	for (int i=0; i < numberOfSeries; i++){
+    		//randomize starting point, ending point, step
+    		// create Seria object and add it to the mainGameSeriaList List
+    		
+    		// 1. create random step in range [-9,9]
+    		if (step == 0){
+    			int n = (int)((double)(stepList.size() * Math.random()));
+    			step = stepList.get(n);
+    			stepList.remove(n);
+    		}
+    		if (step > 0 ){
+    			start = 0;
+    			end = 100;
+    		}
+    		else {
+    			start = 100;
+    			end = 0;
+    		}
+    		s = new Seria(start, end, step);
+    		mainGameSeriaList.add(s);
+
+    	} // end of foreach 
+    }
+    
     
     public void addListenerOnSpinnerItemSelection() {
     	spinner = (Spinner) findViewById(R.id.chooseSeriesNumberSpnr);
@@ -69,6 +110,7 @@ public class SeriesGame extends Activity {
     	tvShowSeries = (TextView) findViewById(R.id.mainGameView);
     	btnShowNext = (Button) findViewById(R.id.showNextBtn);
     	btnGoSeriesGame = (Button) findViewById(R.id.GoSeriesGameBtn);
+    	tvShowSeriesGameDescription = (TextView) findViewById(R.id.descriptionGameView);
     	
     	 Toast.makeText(this,
     				"Starting series game : " + 
@@ -78,13 +120,43 @@ public class SeriesGame extends Activity {
     	btnGoSeriesGame.setVisibility(View.GONE);
     	tvShowSeries.setVisibility(View.VISIBLE);
     	btnShowNext.setVisibility(View.VISIBLE);
+    	tvShowSeriesGameDescription.setVisibility(View.VISIBLE);
+    	
+    	generateSeriesForGame(spinner.getSelectedItemPosition());
+    	showSeriesGameDescription();
+    	showFirstSeries();
     	
    }
+    
+    public void showSeriesGameDescription(){
+    	tvShowSeriesGameDescription = (TextView) findViewById(R.id.descriptionGameView);
+    	String line;
+    	String prevLines;
+    	for (Seria s : mainGameSeriaList) {
+    		line = "\n" + s.getFirstElement() + " .. " + s.getStep() + " .. " + s.getLastElement();
+    		prevLines = (String) tvShowSeriesGameDescription.getText();
+    		tvShowSeriesGameDescription.setText(prevLines + line);
+    	}
+    }
+    
+    public void showFirstSeries(){
+    	tvShowSeries = (TextView) findViewById(R.id.mainGameView);
+    	String vector = "";
+    	for (Seria s : mainGameSeriaList) {
+    		vector = vector + " " + s.getFirstElement();
+    	}
+    	tvShowSeries.setText("( " + vector+  " )");
+    	tvShowSeries.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
+    }
     
     public void showNext(View view){
     	Log.i("ShowGame.class.showNext "," f:"+s.getFirstElement()+" step:"+s.getStep()+" curr:"+s.getCurrentElement());
     	tvShowSeries = (TextView) findViewById(R.id.mainGameView);
-    	tvShowSeries.setText("( " + s.getNextElement()+ " )");
+    	String vector = "";
+    	for (Seria s : mainGameSeriaList) {
+    		vector = vector + " " + s.getNextElement();
+    	}
+    	tvShowSeries.setText("( " +vector+  " )");
     	tvShowSeries.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
     }
 
