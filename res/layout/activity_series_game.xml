@@ -9,11 +9,11 @@
      <Spinner
         android:id="@+id/chooseSeriesNumberSpnr"
         android:layout_width="match_parent"
-        android:layout_height="20dip" />
+        android:layout_height="50dip" />
     
      <Button
         android:id="@+id/GoSeriesGameBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="50dip"
         android:onClick="goSeriesGame"
         android:text="@string/GoSeriesGameBtnTxt" />
@@ -34,14 +34,6 @@
         android:text="@string/series_vector"
         android:visibility="gone" />
 
-    <Button
-        android:id="@+id/showNextBtn"
-        android:layout_width="match_parent"
-        android:layout_height="50dip"
-        android:onClick="showNext"
-        android:text="@string/showNextBtnTxt"
-        android:visibility="gone" />
-
     <TextView
         android:id="@+id/descriptionGameView"
         android:layout_width="match_parent"
@@ -50,5 +42,12 @@
         android:text="@string/descriptionGameViewTxt"
         android:visibility="gone" />
      
-
+   <Button
+        android:id="@+id/showNextBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:onClick="showNext"
+        android:text="@string/showNextBtnTxt"
+        android:visibility="gone" />
+   
 </LinearLayout>

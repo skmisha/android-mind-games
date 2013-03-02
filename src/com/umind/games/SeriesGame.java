@@ -63,6 +63,7 @@ public class SeriesGame extends Activity {
     			android.R.layout.simple_spinner_item, list);
     		dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     		spinner.setAdapter(dataAdapter);
+    	spinner.setSelection(3);	
     }
     
     public void generateSeriesForGame(int numberOfSeries){   	
@@ -73,18 +74,19 @@ public class SeriesGame extends Activity {
     	Integer min = -9;
     	List<Integer> stepList = new ArrayList<Integer>();
     	for (int i = min; i <= max; i++){
-    		stepList.add(i);
+    		if (i != 0 ) {stepList.add(i);}
+    		
     	}
     	for (int i=0; i < numberOfSeries; i++){
     		//randomize starting point, ending point, step
     		// create Seria object and add it to the mainGameSeriaList List
     		
     		// 1. create random step in range [-9,9]
-    		if (step == 0){
-    			int n = (int)((double)(stepList.size() * Math.random()));
-    			step = stepList.get(n);
-    			stepList.remove(n);
-    		}
+
+   			int n = (int)((double)(stepList.size() * Math.random()));
+   			step = stepList.get(n);
+   			stepList.remove(n);
+
     		if (step > 0 ){
     			start = 0;
     			end = 100;
@@ -111,10 +113,10 @@ public class SeriesGame extends Activity {
     	btnShowNext = (Button) findViewById(R.id.showNextBtn);
     	btnGoSeriesGame = (Button) findViewById(R.id.GoSeriesGameBtn);
     	tvShowSeriesGameDescription = (TextView) findViewById(R.id.descriptionGameView);
-    	
+    	Integer number = (Integer) spinner.getSelectedItemPosition() +1;
     	 Toast.makeText(this,
-    				"Starting series game : " + 
-    		                "\n"+ String.valueOf(spinner.getSelectedItem()) +" random series selected",    		             
+    				"Selected " + 
+    		                "\n"+ number +" random series selected",    		             
     					Toast.LENGTH_SHORT).show();
     	spinner.setVisibility(View.GONE);
     	btnGoSeriesGame.setVisibility(View.GONE);
@@ -122,7 +124,7 @@ public class SeriesGame extends Activity {
     	btnShowNext.setVisibility(View.VISIBLE);
     	tvShowSeriesGameDescription.setVisibility(View.VISIBLE);
     	
-    	generateSeriesForGame(spinner.getSelectedItemPosition());
+    	generateSeriesForGame(spinner.getSelectedItemPosition()+1);
     	showSeriesGameDescription();
     	showFirstSeries();
     	
