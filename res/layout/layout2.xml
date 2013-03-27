@@ -24,44 +24,44 @@
 		android:layout_height="fill_parent"
 		android:background="@color/backgroundGrey" >
 <TableLayout
-android:layout_width="fill_parent"
-android:layout_height="wrap_content"
-android:background="@color/backgroundGrey"
-android:padding="15dip"
-android:stretchColumns="1" >
-<TableRow
-android:layout_marginBottom="0dip"
-android:background="@drawable/multitext_top" >
-<TextView
-style="@style/BoldText"
-android:padding="7dip"
-android:text="@string/detail_log_file" />
-</TableRow>
-<TableRow
-android:layout_marginBottom="10dip"
-android:background="@drawable/multitext_bottom" >
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@color/backgroundGrey"
+	android:padding="15dip"
+	android:stretchColumns="1" >
+	<TableRow
+		android:layout_marginBottom="0dip"
+		android:background="@drawable/multitext_top" >
 	<TextView
-		android:id="@+id/log_file"
-		style="@style/DetailRightText"
-		android:layout_width="0dip"
-		android:layout_span="2"
-		android:gravity="right"
-		android:padding="7dip" />
-</TableRow>
-<TableRow
-android:layout_marginBottom="10dip"
-android:background="@drawable/rounded_edittext" >
-<TextView
-style="@style/BoldText"
-android:padding="7dip"
-android:text="@string/detail_log_id" />
-<TextView
-android:id="@+id/log_id"
-style="@style/DetailRightText"
-android:gravity="right"
-android:padding="7dip"
-android:singleLine="true" />
-</TableRow>
+		style="@style/BoldText"
+		android:padding="7dip"
+		android:text="@string/detail_log_file" />
+	</TableRow>
+	<TableRow
+		android:layout_marginBottom="10dip"
+		android:background="@drawable/multitext_bottom" >
+		<TextView
+			android:id="@+id/log_file"
+			style="@style/DetailRightText"
+			android:layout_width="0dip"
+			android:layout_span="2"
+			android:gravity="right"
+			android:padding="7dip" />
+	</TableRow>
+	<TableRow
+		android:layout_marginBottom="10dip"
+		android:background="@drawable/rounded_edittext" >
+		<TextView
+			style="@style/BoldText"
+			android:padding="7dip"
+			android:text="@string/detail_log_id" />
+		<TextView
+			android:id="@+id/log_id"
+			style="@style/DetailRightText"
+			android:gravity="right"
+			android:padding="7dip"
+			android:singleLine="true" />
+	</TableRow>
 <TableRow android:background="@drawable/multitext_top" >
 <TextView
 style="@style/BoldText"

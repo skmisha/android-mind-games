@@ -45,39 +45,40 @@ public final class R {
     }
     public static final class id {
         public static final int GoSeriesGameBtn=0x7f080007;
-        public static final int about=0x7f08001b;
-        public static final int apptitle=0x7f08000c;
+        public static final int about=0x7f08001c;
+        public static final int apptitle=0x7f08000d;
         public static final int button1=0x7f080002;
         public static final int button2=0x7f080001;
         public static final int chooseSeriesNumberSpnr=0x7f080006;
         public static final int content=0x7f080004;
         public static final int descriptionGameView=0x7f08000b;
-        public static final int edit_message=0x7f080017;
+        public static final int edit_message=0x7f080018;
         public static final int handle=0x7f080005;
-        public static final int log_file=0x7f08000d;
-        public static final int log_id=0x7f08000e;
-        public static final int log_message=0x7f08000f;
-        public static final int log_priority=0x7f080010;
-        public static final int log_priority_name=0x7f080011;
-        public static final int log_timestamp=0x7f080012;
+        public static final int log_file=0x7f08000e;
+        public static final int log_id=0x7f08000f;
+        public static final int log_message=0x7f080010;
+        public static final int log_priority=0x7f080011;
+        public static final int log_priority_name=0x7f080012;
+        public static final int log_timestamp=0x7f080013;
         public static final int mainGameView=0x7f080009;
-        public static final int mainView=0x7f080018;
-        public static final int mathGameBtn=0x7f080014;
-        public static final int memoryGameBtn=0x7f080015;
-        public static final int menu_settings=0x7f080019;
-        public static final int scoreBtn=0x7f080016;
-        public static final int seriesGameBtn=0x7f080013;
+        public static final int mainView=0x7f080019;
+        public static final int mathGameBtn=0x7f080015;
+        public static final int memoryGameBtn=0x7f080016;
+        public static final int menu_settings=0x7f08001a;
+        public static final int scoreBtn=0x7f080017;
+        public static final int seriesGameBtn=0x7f080014;
         public static final int showNextBtn=0x7f08000a;
         public static final int slidingDrawer1=0x7f080003;
-        public static final int sound=0x7f08001a;
+        public static final int sound=0x7f08001b;
         public static final int startOverBtn=0x7f080008;
         public static final int textView1=0x7f080000;
+        public static final int textView2=0x7f08000c;
     }
     public static final class layout {
         public static final int activity_math_game=0x7f030000;
         public static final int activity_memory_game=0x7f030001;
         public static final int activity_series_game=0x7f030002;
-        public static final int activity_series_game_old=0x7f030003;
+        public static final int activity_series_game_graphics=0x7f030003;
         public static final int layout2=0x7f030004;
         public static final int main=0x7f030005;
     }
