@@ -33,5 +33,8 @@
     <style name="TitleText">titletext</style>
 
     <string name="title_activity_memory_game">MemoryGame</string>
+    <string name="textSizeForResults">60</string>
+    <string name="textSizeForDescription">70</string>
+    <string name="x">X</string>
 
 </resources>

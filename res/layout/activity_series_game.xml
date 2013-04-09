@@ -32,9 +32,88 @@
         android:layout_height="90dp"
         android:gravity="center_horizontal"
         android:text="@string/series_vector"
-        android:visibility="gone" />
+        android:visibility="gone" /> 
     
-    <GridLayout 
+ <GridLayout 
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_gravity="center"
+    	android:columnCount="9"
+    	android:orientation="horizontal" >
+		<TextView
+    	    android:id="@+id/L1"
+    	    android:layout_width="match_parent"
+    	    android:gravity="center_horizontal"
+    	    android:text="@string/x"
+    	    android:textSize="@string/textSizeForResults"
+    	    android:visibility="gone"
+    	    />
+   	    <TextView
+    	    android:id="@+id/L2"
+    	    android:layout_width="match_parent"
+    	    android:gravity="center_horizontal"
+    	    android:text="@string/x"
+    	    android:textSize="@string/textSizeForResults"
+    	    android:visibility="gone"
+    	    />
+    	<TextView
+    	    android:id="@+id/L3"
+    	    android:layout_width="match_parent"
+    	    android:gravity="center_horizontal"
+    	    android:text="@string/x"
+    	    android:textSize="@string/textSizeForResults"
+    	    android:visibility="gone"
+    	    />
+   		<TextView
+    	    android:id="@+id/L4"
+    	    android:layout_width="match_parent"
+    	    android:gravity="center_horizontal"
+    	    android:text="@string/x"
+    	    android:textSize="@string/textSizeForResults"
+    	    android:visibility="gone"
+    	    />
+    	<TextView
+    	    android:id="@+id/L5"
+    	    android:layout_width="match_parent"
+    	    android:gravity="center_horizontal"
+    	    android:text="@string/x"
+    	    android:textSize="@string/textSizeForResults"
+    	    android:visibility="gone"
+    	    />
+   		<TextView
+    	    android:id="@+id/L6"
+    	    android:layout_width="match_parent"
+    	    android:gravity="center_horizontal"
+    	    android:text="@string/x"
+    	    android:textSize="@string/textSizeForResults"
+    	    android:visibility="gone"
+    	    />
+    	<TextView
+    	    android:id="@+id/L7"
+    	    android:layout_width="match_parent"
+    	    android:gravity="center_horizontal"
+    	    android:text="@string/x"
+    	    android:textSize="@string/textSizeForResults"
+    	    android:visibility="gone"
+    	    />
+   		<TextView
+    	    android:id="@+id/L8"
+    	    android:layout_width="match_parent"
+    	    android:gravity="center_horizontal"
+    	    android:text="@string/x"
+    	    android:textSize="@string/textSizeForResults"
+    	    android:visibility="gone"
+    	    />
+   		<TextView
+    	    android:id="@+id/L9"
+    	    android:layout_width="match_parent"
+    	    android:gravity="center_horizontal"
+    	    android:text="@string/x"
+    	    android:textSize="@string/textSizeForResults"
+    	    android:visibility="gone"
+    	    />  
+    	</GridLayout>  
+      <GridLayout 
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
     	android:layout_gravity="center"

@@ -122,12 +122,32 @@ public class SeriesGame extends Activity {
     					Toast.LENGTH_SHORT).show();
     	spinner.setVisibility(View.GONE);
     	btnGoSeriesGame.setVisibility(View.GONE);
-    	tvShowSeries.setVisibility(View.VISIBLE);
+    	//tvShowSeries.setVisibility(View.VISIBLE);
     	btnShowNext.setVisibility(View.VISIBLE);
     	tvShowSeriesGameDescription.setVisibility(View.VISIBLE);
     	((Button) findViewById(R.id.bk_one)).setVisibility(View.VISIBLE);
+    	((Button) findViewById(R.id.bk_two)).setVisibility(View.VISIBLE);
+    	((Button) findViewById(R.id.bk_three)).setVisibility(View.VISIBLE);
+    	((Button) findViewById(R.id.bk_four)).setVisibility(View.VISIBLE);
+    	((Button) findViewById(R.id.bk_five)).setVisibility(View.VISIBLE);
+    	((Button) findViewById(R.id.bk_six)).setVisibility(View.VISIBLE);
+    	((Button) findViewById(R.id.bk_seven)).setVisibility(View.VISIBLE);
+    	((Button) findViewById(R.id.bk_eight)).setVisibility(View.VISIBLE);
+    	((Button) findViewById(R.id.bk_nine)).setVisibility(View.VISIBLE);
+    	((Button) findViewById(R.id.bk_zero)).setVisibility(View.VISIBLE);
+    /*	
+    	((TextView) findViewById(R.id.L1)).setVisibility(View.VISIBLE);
+    	((TextView) findViewById(R.id.L2)).setVisibility(View.VISIBLE);
+    	((TextView) findViewById(R.id.L3)).setVisibility(View.VISIBLE);
+    	((TextView) findViewById(R.id.L4)).setVisibility(View.VISIBLE);
+    	((TextView) findViewById(R.id.L5)).setVisibility(View.VISIBLE);
+    	((TextView) findViewById(R.id.L6)).setVisibility(View.VISIBLE);
+    	((TextView) findViewById(R.id.L7)).setVisibility(View.VISIBLE);
+    	((TextView) findViewById(R.id.L8)).setVisibility(View.VISIBLE);
+    	((TextView) findViewById(R.id.L9)).setVisibility(View.VISIBLE);
     	
-    	((Button) findViewById(R.id.bk_one)).getBackground().setColorFilter(0xFFFF0000, PorterDuff.Mode.MULTIPLY);
+    */	
+    	//((Button) findViewById(R.id.bk_one)).getBackground().setColorFilter(0xFFFF0000, PorterDuff.Mode.MULTIPLY);
     	
     	generateSeriesForGame(spinner.getSelectedItemPosition()+1);
     	showSeriesGameDescription();
@@ -137,6 +157,7 @@ public class SeriesGame extends Activity {
     
     public void showSeriesGameDescription(){
     	tvShowSeriesGameDescription = (TextView) findViewById(R.id.descriptionGameView);
+    	tvShowSeriesGameDescription.setTextSize( 20 ); //Float.valueOf((findViewById(R.string.textSizeForDescription).toString()) ) );
     	String line;
     	String prevLines;
     	for (Seria s : mainGameSeriaList) {
@@ -152,6 +173,8 @@ public class SeriesGame extends Activity {
     	for (Seria s : mainGameSeriaList) {
     		vector = vector + " " + s.getFirstElement();
     	}
+    	// draw the results
+    	tvShowSeries.setTextSize( 60 ) ; //Float.valueOf((findViewById(R.string.textSizeForResults).toString() )  )   );
     	tvShowSeries.setText("( " + vector+  " )");
     	tvShowSeries.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
     }
@@ -163,6 +186,8 @@ public class SeriesGame extends Activity {
     	for (Seria s : mainGameSeriaList) {
     		vector = vector + " " + s.getNextElement();
     	}
+    	
+    	// draw the results
     	tvShowSeries.setText("( " +vector+  " )");
     	tvShowSeries.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
     }
