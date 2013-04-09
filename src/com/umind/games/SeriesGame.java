@@ -1,6 +1,8 @@
 package com.umind.games;
 
 import java.util.ArrayList;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -123,6 +125,9 @@ public class SeriesGame extends Activity {
     	tvShowSeries.setVisibility(View.VISIBLE);
     	btnShowNext.setVisibility(View.VISIBLE);
     	tvShowSeriesGameDescription.setVisibility(View.VISIBLE);
+    	((Button) findViewById(R.id.bk_one)).setVisibility(View.VISIBLE);
+    	
+    	((Button) findViewById(R.id.bk_one)).getBackground().setColorFilter(0xFFFF0000, PorterDuff.Mode.MULTIPLY);
     	
     	generateSeriesForGame(spinner.getSelectedItemPosition()+1);
     	showSeriesGameDescription();

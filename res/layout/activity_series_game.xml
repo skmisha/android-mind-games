@@ -34,6 +34,57 @@
         android:text="@string/series_vector"
         android:visibility="gone" />
     
+    <GridLayout 
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_gravity="center"
+    	android:columnCount="3"
+    	android:orientation="horizontal" >
+		<Button 
+		    android:text="1"
+		    android:id="@+id/bk_one"
+		    android:visibility="gone" />
+		<Button 
+		    android:text="2"
+		    android:id="@+id/bk_two"
+		    android:visibility="gone" />		
+		<Button 
+		    android:text="3"
+		    android:id="@+id/bk_three"
+		    android:visibility="gone" />
+		<Button 
+		    android:text="4"
+		    android:id="@+id/bk_four"
+		    android:visibility="gone" />		
+		<Button 
+		    android:text="5"
+		    android:id="@+id/bk_five"
+		    android:visibility="gone" />
+		<Button 
+		    android:text="6"
+		    android:id="@+id/bk_six"
+		    android:visibility="gone" />		
+		<Button 
+		    android:text="7"
+		    android:id="@+id/bk_seven"
+		    android:visibility="gone" />
+		<Button 
+		    android:text="8"
+		    android:id="@+id/bk_eight"
+		    android:visibility="gone" />		
+		<Button 
+		    android:text="9"
+		    android:id="@+id/bk_nine"
+		    android:visibility="gone" />
+		<Button 
+		    android:text="0"
+		    android:id="@+id/bk_zero"
+		    android:visibility="gone"
+		    android:layout_rowSpan="3"
+		    android:layout_gravity="fill" />
+
+	</GridLayout>
+    
     <Button
         android:id="@+id/showNextBtn"
         android:layout_width="match_parent"

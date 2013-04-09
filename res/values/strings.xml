@@ -10,7 +10,7 @@
     <string name="mathGameBtnTxt">Math Game</string>
     <string name="memoryGameBtnTxt">Memory Game</string>
     <string name="GoSeriesGameBtnTxt">Go</string>
-    <string name="descriptionGameViewTxt">Description of the game:</string>
+    <string name="descriptionGameViewTxt">Description OF the game:</string>
     <string name="toast_selected_number_series"> of series was selected</string>
     
     <string name="dataLbl"></string>
