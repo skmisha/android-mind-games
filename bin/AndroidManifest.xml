@@ -11,7 +11,8 @@
         android:label="@string/app_name" >
         <activity
             android:name="com.umind.games.startPage"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:configChanges="orientation|keyboardHidden|keyboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,21 +21,24 @@
         </activity>
         <activity
             android:name="com.umind.games.SeriesGame"
-            android:label="@string/title_activity_show_game" >
+            android:label="@string/title_activity_show_game"
+            android:configChanges="orientation|keyboardHidden|keyboard" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.umind.games.startPage" />
         </activity>
         <activity
             android:name="com.umind.games.MathGame"
-            android:label="@string/title_activity_math_game" >
+            android:label="@string/title_activity_math_game"
+            android:configChanges="orientation|keyboardHidden|keyboard" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.umind.games.ShowGame" />
         </activity>
         <activity
             android:name="com.umind.games.MemoryGame"
-            android:label="@string/title_activity_memory_game" >
+            android:label="@string/title_activity_memory_game"
+            android:configChanges="orientation|keyboardHidden|keyboard" >
         </activity>
     </application>
 

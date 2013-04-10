@@ -1,16 +1,14 @@
 package com.umind.games;
 
 import java.util.ArrayList;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import java.util.Collections;
 import java.util.List;
-import java.util.Random;
-
-import android.os.Build;
-import android.os.Bundle;
+import java.awt.*; //GridLayout;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.graphics.Color;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
@@ -18,10 +16,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+
+import android.widget.GridLayout;
+import android.widget.GridLayout.LayoutParams;
 import android.widget.Spinner;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.support.v4.app.NavUtils;
 
 public class SeriesGame extends Activity {
 
@@ -60,12 +61,13 @@ public class SeriesGame extends Activity {
     	spinner = (Spinner) findViewById(R.id.chooseSeriesNumberSpnr);
     	List<Integer> list = new ArrayList<Integer>();
     	list.add(1);	list.add(2);   	list.add(3);   	list.add(4);
-    	list.add(5);	list.add(6);   	list.add(7);   	list.add(8);
+    	list.add(5);	list.add(6);   	list.add(7);   	//list.add(8);
     	ArrayAdapter<Integer> dataAdapter = new ArrayAdapter<Integer>(this, 
     			android.R.layout.simple_spinner_item, list);
     		dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     		spinner.setAdapter(dataAdapter);
     	spinner.setSelection(3);	
+    	//TODO : set selection from last choise 
     }
     
     public void generateSeriesForGame(int numberOfSeries){   	
@@ -135,18 +137,9 @@ public class SeriesGame extends Activity {
     	((Button) findViewById(R.id.bk_eight)).setVisibility(View.VISIBLE);
     	((Button) findViewById(R.id.bk_nine)).setVisibility(View.VISIBLE);
     	((Button) findViewById(R.id.bk_zero)).setVisibility(View.VISIBLE);
-    /*	
-    	((TextView) findViewById(R.id.L1)).setVisibility(View.VISIBLE);
-    	((TextView) findViewById(R.id.L2)).setVisibility(View.VISIBLE);
-    	((TextView) findViewById(R.id.L3)).setVisibility(View.VISIBLE);
-    	((TextView) findViewById(R.id.L4)).setVisibility(View.VISIBLE);
-    	((TextView) findViewById(R.id.L5)).setVisibility(View.VISIBLE);
-    	((TextView) findViewById(R.id.L6)).setVisibility(View.VISIBLE);
-    	((TextView) findViewById(R.id.L7)).setVisibility(View.VISIBLE);
-    	((TextView) findViewById(R.id.L8)).setVisibility(View.VISIBLE);
-    	((TextView) findViewById(R.id.L9)).setVisibility(View.VISIBLE);
+
+    	drawSeriesGameResultLabels();
     	
-    */	
     	//((Button) findViewById(R.id.bk_one)).getBackground().setColorFilter(0xFFFF0000, PorterDuff.Mode.MULTIPLY);
     	
     	generateSeriesForGame(spinner.getSelectedItemPosition()+1);
@@ -154,6 +147,27 @@ public class SeriesGame extends Activity {
     	showFirstSeries();
     	
    }
+    public void drawSeriesGameResultLabels(){
+    	//get GL
+    	//create tv and add it to GL
+    	GridLayout GLayout = (android.widget.GridLayout) findViewById(R.id.resultGridLayout);
+    	Spinner spinner = (Spinner) findViewById(R.id.chooseSeriesNumberSpnr);
+    	Integer number = (Integer) spinner.getSelectedItemPosition() +1;
+    	for (int i=1; i<=number; i++){
+
+    	 TextView valueTV = new TextView(this);
+
+    	    valueTV.setText("  ");
+    	    valueTV.setId(i);
+    	    android.widget.TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(LayoutParams.WRAP_CONTENT, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);     	    
+    	    valueTV.setLayoutParams(layoutParams);
+    	    valueTV.setTextSize(60);
+
+    	    valueTV.setBackgroundColor(Color.GRAY);
+    	    valueTV.setTextColor(Color.BLACK);
+    	    ((GridLayout) GLayout).addView(valueTV);
+    	}
+    }
     
     public void showSeriesGameDescription(){
     	tvShowSeriesGameDescription = (TextView) findViewById(R.id.descriptionGameView);
