@@ -1,6 +1,7 @@
 package com.umind.games;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.awt.*; //GridLayout;
 import android.annotation.SuppressLint;
@@ -33,10 +34,11 @@ public class SeriesGame extends Activity {
 	public Button btnShowNext;
 	public Button btnGoSeriesGame;
 	private List<Seria> mainGameSeriaList = new ArrayList<Seria>();
+	private ResultDisplay display = new ResultDisplay();
+	//private HashMap<Integer,TextView> resultTextView = new HashMap<Integer,TextView>();
+	private Integer currentResultLabel;	
 	private Spinner spinner;
-	
-	
-	
+
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -113,11 +115,12 @@ public class SeriesGame extends Activity {
     
     public void goSeriesGame (View view){
     	spinner = (Spinner) findViewById(R.id.chooseSeriesNumberSpnr);
+    	Integer number = (Integer) spinner.getSelectedItemPosition() +1;
     	tvShowSeries = (TextView) findViewById(R.id.mainGameView);
     	btnShowNext = (Button) findViewById(R.id.showNextBtn);
     	btnGoSeriesGame = (Button) findViewById(R.id.GoSeriesGameBtn);
     	tvShowSeriesGameDescription = (TextView) findViewById(R.id.descriptionGameView);
-    	Integer number = (Integer) spinner.getSelectedItemPosition() +1;
+    	
     	 Toast.makeText(this,
     				"Selected " + 
     		                "\n"+ number +" random series selected",    		             
@@ -153,20 +156,47 @@ public class SeriesGame extends Activity {
     	GridLayout GLayout = (android.widget.GridLayout) findViewById(R.id.resultGridLayout);
     	Spinner spinner = (Spinner) findViewById(R.id.chooseSeriesNumberSpnr);
     	Integer number = (Integer) spinner.getSelectedItemPosition() +1;
+    	Integer o=1;
     	for (int i=1; i<=number; i++){
 
-    	 TextView valueTV = new TextView(this);
+    	 TextView resultTV = new TextView(this);
 
-    	    valueTV.setText("  ");
-    	    valueTV.setId(i);
+    	 	resultTV.setText("  ");
+    	 	resultTV.setId(i);
     	    android.widget.TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(LayoutParams.WRAP_CONTENT, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);     	    
-    	    valueTV.setLayoutParams(layoutParams);
-    	    valueTV.setTextSize(60);
+    	    resultTV.setLayoutParams(layoutParams);
+    	    resultTV.setTextSize(60);
 
-    	    valueTV.setBackgroundColor(Color.GRAY);
-    	    valueTV.setTextColor(Color.BLACK);
-    	    ((GridLayout) GLayout).addView(valueTV);
+    	    resultTV.setBackgroundColor(Color.GRAY);
+    	    resultTV.setTextColor(Color.BLACK);
+    	    ((GridLayout) GLayout).addView(resultTV);
+    	    display.setTextOnTV(number, )
+    	    resultTextView.put(Integer.valueOf(i),resultTV);
     	}
+    }
+    
+
+    
+    public void showFirstSeries(){
+    	tvShowSeries = (TextView) findViewById(R.id.mainGameView);
+    	String vector = "";
+    	int i=1;
+        for ( Integer key :     		resultTextView.keySet() )
+        {
+        	TextView value =     		resultTextView.get( key );
+        	Log.i("SeriesGame.class.showFirstSeries","resultTextView, key:"+ key + " value: " + value.getText().toString());
+        }
+    	for (Seria s : mainGameSeriaList) {
+    		Log.i("SeriesGame.class.showFirstSeries","Seria s set to  "+s.getFirstElement());
+    		vector = vector + " " + s.getFirstElement();
+    		//resultTextView.put(Integer.valueOf(i),   Integer.valueOf(s.getFirstElement()).toString());
+    		resultTextView.get(Integer.valueOf(i)).setText(s.getFirstElement());
+    		i++;
+    	}
+    	// draw the results
+    	tvShowSeries.setTextSize( 60 ) ; //Float.valueOf((findViewById(R.string.textSizeForResults).toString() )  )   );
+    	tvShowSeries.setText("( " + vector+  " )");
+    	tvShowSeries.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
     }
     
     public void showSeriesGameDescription(){
@@ -179,20 +209,7 @@ public class SeriesGame extends Activity {
     		prevLines = (String) tvShowSeriesGameDescription.getText();
     		tvShowSeriesGameDescription.setText(prevLines + line);
     	}
-    }
-    
-    public void showFirstSeries(){
-    	tvShowSeries = (TextView) findViewById(R.id.mainGameView);
-    	String vector = "";
-    	for (Seria s : mainGameSeriaList) {
-    		vector = vector + " " + s.getFirstElement();
-    	}
-    	// draw the results
-    	tvShowSeries.setTextSize( 60 ) ; //Float.valueOf((findViewById(R.string.textSizeForResults).toString() )  )   );
-    	tvShowSeries.setText("( " + vector+  " )");
-    	tvShowSeries.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
-    }
-    
+    }    
     public void showNext(View view){
     	Log.i("ShowGame.class.showNext "," f:"+s.getFirstElement()+" step:"+s.getStep()+" curr:"+s.getCurrentElement());
     	tvShowSeries = (TextView) findViewById(R.id.mainGameView);
