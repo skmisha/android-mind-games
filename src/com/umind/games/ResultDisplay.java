@@ -63,8 +63,11 @@ public class ResultDisplay extends Activity{
    	    displayHM.put(Integer.valueOf(maxIndexOfTextViewOnDisplay),resultTV);
    	    maxIndexOfTextViewOnDisplay++;
 	}
-	
-	
+	 
+	public int getMaxIndexOfTextViewOnDisplay()
+	{
+		return maxIndexOfTextViewOnDisplay;
+	}
 		
 	}
 

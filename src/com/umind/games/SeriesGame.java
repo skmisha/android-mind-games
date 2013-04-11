@@ -112,7 +112,7 @@ public class SeriesGame extends Activity {
     	spinner = (Spinner) findViewById(R.id.chooseSeriesNumberSpnr);
     	spinner.setOnItemSelectedListener(new CustomOnItemSelectedListener());
     }
-    
+    // this method is creating and drawing the game
     public void goSeriesGame (View view){
     	spinner = (Spinner) findViewById(R.id.chooseSeriesNumberSpnr);
     	Integer number = (Integer) spinner.getSelectedItemPosition() +1;
@@ -141,39 +141,30 @@ public class SeriesGame extends Activity {
     	((Button) findViewById(R.id.bk_nine)).setVisibility(View.VISIBLE);
     	((Button) findViewById(R.id.bk_zero)).setVisibility(View.VISIBLE);
 
-    	drawSeriesGameResultLabels();
-    	
-    	//((Button) findViewById(R.id.bk_one)).getBackground().setColorFilter(0xFFFF0000, PorterDuff.Mode.MULTIPLY);
-    	
+    	//creates Series with specific value for the game
     	generateSeriesForGame(spinner.getSelectedItemPosition()+1);
+    	
+    	drawSeriesGameResultLabels();    	
+    	
     	showSeriesGameDescription();
     	showFirstSeries();
     	
    }
+    //draws values on the textviews
     public void drawSeriesGameResultLabels(){
     	//get GL
     	//create tv and add it to GL
-    	GridLayout GLayout = (android.widget.GridLayout) findViewById(R.id.resultGridLayout);
-    	Spinner spinner = (Spinner) findViewById(R.id.chooseSeriesNumberSpnr);
+    	//GridLayout GLayout = (android.widget.GridLayout) findViewById(R.id.resultGridLayout);
+    	//Spinner spinner = (Spinner) findViewById(R.id.chooseSeriesNumberSpnr);
+    	for (Integer i=1; i<display.getMaxIndexOfTextViewOnDisplay(); i++)
+    	{
+    		display.setTextOnTV(i, CHARSET THE VALUE FROM HERE mainGameSeriaList);
+    	}
     	Integer number = (Integer) spinner.getSelectedItemPosition() +1;
     	Integer o=1;
-    	for (int i=1; i<=number; i++){
-
-    	 TextView resultTV = new TextView(this);
-
-    	 	resultTV.setText("  ");
-    	 	resultTV.setId(i);
-    	    android.widget.TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(LayoutParams.WRAP_CONTENT, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);     	    
-    	    resultTV.setLayoutParams(layoutParams);
-    	    resultTV.setTextSize(60);
-
-    	    resultTV.setBackgroundColor(Color.GRAY);
-    	    resultTV.setTextColor(Color.BLACK);
-    	    ((GridLayout) GLayout).addView(resultTV);
-    	    display.setTextOnTV(number, )
-    	    resultTextView.put(Integer.valueOf(i),resultTV);
-    	}
+    	
     }
+    
     
 
     
