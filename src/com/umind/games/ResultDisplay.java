@@ -47,6 +47,21 @@ public class ResultDisplay extends Activity{
 			addTextViewToDisplay();
 		}
 	}
+	public String getTextOnTV(Integer idNumber)
+	{
+		String str;
+		if (displayHM.containsKey(idNumber))
+		{
+			TextView tv = displayHM.get(idNumber);
+			str = tv.getText().toString();
+			return str;
+		}
+		else 
+		{
+			str="";
+			return str;
+		}
+	}
 	
 	private void addTextViewToDisplay()
 	{

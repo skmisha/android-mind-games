@@ -144,13 +144,13 @@ public class SeriesGame extends Activity {
     	//creates Series with specific value for the game
     	generateSeriesForGame(spinner.getSelectedItemPosition()+1);
     	
-    	drawSeriesGameResultLabels();    	
+    	//drawSeriesGameResultLabels();    	
     	
     	showSeriesGameDescription();
     	showFirstSeries();
     	
    }
-    //draws values on the textviews
+/*    //draws values on the textviews
     public void drawSeriesGameResultLabels(){
     	//get GL
     	//create tv and add it to GL
@@ -163,26 +163,20 @@ public class SeriesGame extends Activity {
     	Integer number = (Integer) spinner.getSelectedItemPosition() +1;
     	Integer o=1;
     	
-    }
-    
-    
-
+    }*/
     
     public void showFirstSeries(){
     	tvShowSeries = (TextView) findViewById(R.id.mainGameView);
     	String vector = "";
-    	int i=1;
-        for ( Integer key :     		resultTextView.keySet() )
-        {
-        	TextView value =     		resultTextView.get( key );
-        	Log.i("SeriesGame.class.showFirstSeries","resultTextView, key:"+ key + " value: " + value.getText().toString());
-        }
+    	Integer idNumber=1;
+    	//Log.i("SeriesGame.class.showFirstSeries","resultTextView, key:"+ key + " value: " + value.getText().toString());
+
     	for (Seria s : mainGameSeriaList) {
     		Log.i("SeriesGame.class.showFirstSeries","Seria s set to  "+s.getFirstElement());
-    		vector = vector + " " + s.getFirstElement();
+    		//vector = vector + " " + s.getFirstElement();
     		//resultTextView.put(Integer.valueOf(i),   Integer.valueOf(s.getFirstElement()).toString());
-    		resultTextView.get(Integer.valueOf(i)).setText(s.getFirstElement());
-    		i++;
+    		display.setTextOnTV(idNumber, ((Integer) s.getFirstElement()).toString());
+    		idNumber++;
     	}
     	// draw the results
     	tvShowSeries.setTextSize( 60 ) ; //Float.valueOf((findViewById(R.string.textSizeForResults).toString() )  )   );
