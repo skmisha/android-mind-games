@@ -1,12 +1,9 @@
 package com.umind.games;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.awt.*; //GridLayout;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -17,11 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-
 import android.widget.GridLayout;
-import android.widget.GridLayout.LayoutParams;
 import android.widget.Spinner;
-import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,8 +29,7 @@ public class SeriesGame extends Activity {
 	public Button btnGoSeriesGame;
 	private List<Seria> mainGameSeriaList = new ArrayList<Seria>();
 	private ResultDisplay display = new ResultDisplay();
-	//private HashMap<Integer,TextView> resultTextView = new HashMap<Integer,TextView>();
-	private Integer currentResultLabel;	
+	//private Integer currentResultLabel;	
 	private Spinner spinner;
 
 	@SuppressLint("NewApi")
@@ -144,44 +137,29 @@ public class SeriesGame extends Activity {
     	//creates Series with specific value for the game
     	generateSeriesForGame(spinner.getSelectedItemPosition()+1);
     	
-    	//drawSeriesGameResultLabels();    	
-    	
+    	//places description of the game on the place
     	showSeriesGameDescription();
+    	
     	showFirstSeries();
     	
    }
-/*    //draws values on the textviews
-    public void drawSeriesGameResultLabels(){
-    	//get GL
-    	//create tv and add it to GL
-    	//GridLayout GLayout = (android.widget.GridLayout) findViewById(R.id.resultGridLayout);
-    	//Spinner spinner = (Spinner) findViewById(R.id.chooseSeriesNumberSpnr);
-    	for (Integer i=1; i<display.getMaxIndexOfTextViewOnDisplay(); i++)
-    	{
-    		display.setTextOnTV(i, CHARSET THE VALUE FROM HERE mainGameSeriaList);
-    	}
-    	Integer number = (Integer) spinner.getSelectedItemPosition() +1;
-    	Integer o=1;
-    	
-    }*/
-    
-    public void showFirstSeries(){
-    	tvShowSeries = (TextView) findViewById(R.id.mainGameView);
-    	String vector = "";
-    	Integer idNumber=1;
-    	//Log.i("SeriesGame.class.showFirstSeries","resultTextView, key:"+ key + " value: " + value.getText().toString());
 
-    	for (Seria s : mainGameSeriaList) {
+    
+    public void showFirstSeries()
+    {
+    	Log.i("SeriaGame.class.showFirstSeries","started");
+    	Integer idNumber=1;
+    	for (Seria s : mainGameSeriaList) 
+    	{
+    		Log.i("SeriaGame.class.showFirstSeries","create tv for Seria "+idNumber);
+    		TextView tv = (TextView) new TextView (this);
     		Log.i("SeriesGame.class.showFirstSeries","Seria s set to  "+s.getFirstElement());
-    		//vector = vector + " " + s.getFirstElement();
-    		//resultTextView.put(Integer.valueOf(i),   Integer.valueOf(s.getFirstElement()).toString());
-    		display.setTextOnTV(idNumber, ((Integer) s.getFirstElement()).toString());
+    		display.setTextOnTV(tv, idNumber, ((Integer) s.getFirstElement()).toString());
+    		GridLayout gl = (GridLayout) findViewById(R.id.resultGridLayout);
+    		gl.addView(tv);
+    		Log.i("SeriaGame.class.showFirstSeries","added view to resultGridLayout successfully");
     		idNumber++;
     	}
-    	// draw the results
-    	tvShowSeries.setTextSize( 60 ) ; //Float.valueOf((findViewById(R.string.textSizeForResults).toString() )  )   );
-    	tvShowSeries.setText("( " + vector+  " )");
-    	tvShowSeries.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
     }
     
     public void showSeriesGameDescription(){
