@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -15,6 +16,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.TableRow;
+import android.widget.GridLayout.LayoutParams;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +32,7 @@ public class SeriesGame extends Activity {
 	public Button btnGoSeriesGame;
 	private List<Seria> mainGameSeriaList = new ArrayList<Seria>();
 	private ResultDisplay display = new ResultDisplay();
+	private Button[] numericButtons = new Button[0];
 	//private Integer currentResultLabel;	
 	private Spinner spinner;
 
@@ -123,7 +127,7 @@ public class SeriesGame extends Activity {
     	//tvShowSeries.setVisibility(View.VISIBLE);
     	btnShowNext.setVisibility(View.VISIBLE);
     	tvShowSeriesGameDescription.setVisibility(View.VISIBLE);
-    	((Button) findViewById(R.id.bk_one)).setVisibility(View.VISIBLE);
+ /*   	((Button) findViewById(R.id.num_btn_1)).setVisibility(View.VISIBLE);
     	((Button) findViewById(R.id.bk_two)).setVisibility(View.VISIBLE);
     	((Button) findViewById(R.id.bk_three)).setVisibility(View.VISIBLE);
     	((Button) findViewById(R.id.bk_four)).setVisibility(View.VISIBLE);
@@ -133,17 +137,52 @@ public class SeriesGame extends Activity {
     	((Button) findViewById(R.id.bk_eight)).setVisibility(View.VISIBLE);
     	((Button) findViewById(R.id.bk_nine)).setVisibility(View.VISIBLE);
     	((Button) findViewById(R.id.bk_zero)).setVisibility(View.VISIBLE);
-
+*/
+    	// create buttons programatically and set listener
+    	
     	//creates Series with specific value for the game
     	generateSeriesForGame(spinner.getSelectedItemPosition()+1);
-    	
+    	Log.i("SeriesGame.class.goSeriesGame","will create now keyboard");
+    	createNumberKeyboard();
     	//places description of the game on the place
     	showSeriesGameDescription();
-    	
-    	showFirstSeries();
-    	
+    	showFirstSeries();    	
    }
+    
+    @SuppressLint("ShowToast")
+	public void createNumberKeyboard()
+    {
+    	Log.i("SeriesGame.class.createNumberKeyboard","started");
+    	GridLayout gl = (GridLayout) findViewById(R.id.resultGridLayout);
+    	//android.widget.TableRow.LayoutParams layoutParams = new  .LayoutParams(LayoutParams.WRAP_CONTENT, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
+    	//LayoutParams lparams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 1.0f);
+    	for (int i=0; i< numericButtons.length; i++)
+    	{
+    		numericButtons[i] = new Button(getApplicationContext());
+    		numericButtons[i].setTextColor(Color.parseColor("#2B5B96"));
+    		numericButtons[i].setTextSize(20);
+    		String name = "num_btn_"+i+"_txt"; //num_btn_1_txt
+    		//TODO -- take button's number from from strings
+    		numericButtons[i].setText(name);
+    		//numericButtons[i].setHeight(100);    		
+    	    //numericButtons[i].setLayoutParams(param);
+    	    numericButtons[i].setPadding(15, 5, 15, 5);
+    	    gl.addView(numericButtons[i]);
+    	    Toast.makeText(getApplicationContext(), "added: " + numericButtons[i].getText()+" button", Toast.LENGTH_SHORT);
+    	}
+    	Log.i("SeriesGame.class.createNumberkeyboard","created and added keyboard");
+    }
 
+    
+    // set on click listener for number buttons
+    public View.OnClickListener getOnClickDoSomething(final Button button)  {
+        return new View.OnClickListener() {
+            public void onClick(View v) {
+                //button.setText(" ");
+                Toast.makeText(getApplicationContext(), "pressed: " + button.getText()+" button", Toast.LENGTH_SHORT);
+            }
+        };
+    }
     
     public void showFirstSeries()
     {
@@ -155,12 +194,22 @@ public class SeriesGame extends Activity {
     		TextView tv = (TextView) new TextView (this);
     		Log.i("SeriesGame.class.showFirstSeries","Seria s set to  "+s.getFirstElement());
     		display.setTextOnTV(tv, idNumber, ((Integer) s.getFirstElement()).toString());
+    		TextView empty = (TextView) new TextView(this);
+    		empty.setBackgroundColor(Color.GRAY);
+    		empty.setText(" ");
     		GridLayout gl = (GridLayout) findViewById(R.id.resultGridLayout);
+    		gl.addView(empty);
     		gl.addView(tv);
+    		TextView empty2 = (TextView) new TextView(this);
+    		empty2.setBackgroundColor(Color.GRAY);
+    		empty2.setText(" ");
+    		gl.addView(empty2);
     		Log.i("SeriaGame.class.showFirstSeries","added view to resultGridLayout successfully");
     		idNumber++;
     	}
     }
+    
+    
     
     public void showSeriesGameDescription(){
     	tvShowSeriesGameDescription = (TextView) findViewById(R.id.descriptionGameView);
@@ -183,6 +232,7 @@ public class SeriesGame extends Activity {
     	
     	// draw the results
     	tvShowSeries.setText("( " +vector+  " )");
+    	tvShowSeries.setTextSize(40);
     	tvShowSeries.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
     }
 

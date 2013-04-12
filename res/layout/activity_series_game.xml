@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:columnCount="9"
+        android:columnCount="27"
         android:rowCount="1"
         android:orientation="horizontal" >
 
@@ -43,9 +43,9 @@
         android:layout_gravity="center"
         android:columnCount="3"
         android:orientation="horizontal" >
-
+<!-- 
         <Button
-            android:id="@+id/bk_one"
+            android:id="@+id/num_btn_1"
             android:text="@string/bk_one_txt"
             android:visibility="gone" />
 
@@ -95,6 +95,8 @@
             android:layout_rowSpan="3"
             android:text="@string/bk_zero_txt"
             android:visibility="gone" />
+            
+             -->
     </GridLayout>
 
     <Button

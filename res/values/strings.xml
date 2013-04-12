@@ -30,16 +30,17 @@
     <string name="detail_priority_name"></string>
     <string name="detail_timestamp"></string>
     
-    <string name="bk_one_txt">1</string>
-    <string name="bk_two_txt">2</string>
-    <string name="bk_three_txt">3</string>
-    <string name="bk_four_txt">4</string>
-    <string name="bk_five_txt">5</string>
-    <string name="bk_six_txt">6</string>
-    <string name="bk_seven_txt">7</string>
-    <string name="bk_eight_txt">8</string>
-    <string name="bk_nine_txt">9</string>
-    <string name="bk_zero_txt">0</string>
+    <!--  text on the numeric keyborad buttons -->
+    <string name="num_btn_1_txt">1</string>
+    <string name="num_btn_2_txt">2</string>
+    <string name="num_btn_3_txt">3</string>
+    <string name="num_btn_4_txt">4</string>
+    <string name="num_btn_5_txt">5</string>
+    <string name="num_btn_6_txt">6</string>
+    <string name="num_btn_7_txt">7</string>
+    <string name="num_btn_8_txt">8</string>
+    <string name="num_btn_9_txt">9</string>
+    <string name="num_btn_0_txt">0</string>
 
     <style name="TitleText">titletext</style>
 
